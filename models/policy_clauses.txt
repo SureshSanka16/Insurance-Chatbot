@@ -1,0 +1,242 @@
+HEALTH INSURANCE POLICY DOCUMENT
+Policy Number: HEALTH-2024-IND-123456
+Premium Health Coverage Plan
+
+================================================================================
+SECTION 1: COVERAGE OVERVIEW
+================================================================================
+
+This policy provides comprehensive health insurance coverage up to a maximum sum insured of Rs. 5,00,000 (Five Lakh Rupees) per policy year. The coverage is designed to protect the insured against unexpected medical expenses arising from illness, injury, or hospitalization.
+
+The policy operates on an indemnity basis, meaning the insurance company will reimburse actual medical expenses incurred, subject to policy terms, conditions, and exclusions. All claims are subject to verification and the insurer reserves the right to investigate any claim for authenticity.
+
+================================================================================
+SECTION 2: DEDUCTIBLE AND CO-PAYMENT
+================================================================================
+
+DEDUCTIBLE CLAUSE:
+Every claim under this policy is subject to a mandatory deductible of Rs. 25,000 (Twenty-Five Thousand Rupees). This means that the first Rs. 25,000 of every claim will be borne by the insured. The insurance company will only be liable to pay amounts exceeding the deductible, subject to the sum insured.
+
+The deductible applies per claim and not per policy year. If multiple claims are filed in a year, the deductible will apply to each separate claim event.
+
+CO-PAYMENT CLAUSE:
+In addition to the deductible, the insured is required to bear 10% of all admissible claims as co-payment. The co-payment is calculated on the claim amount after deducting the deductible. For example, if the total claim is Rs. 1,00,000, after deducting Rs. 25,000 deductible, the remaining Rs. 75,000 is subject to 10% co-payment (Rs. 7,500), resulting in a final payable amount of Rs. 67,500.
+
+================================================================================
+SECTION 3: WAITING PERIOD
+================================================================================
+
+INITIAL WAITING PERIOD:
+All claims arising within the first 30 days of policy commencement are not covered, except for claims arising from accidents. This 30-day waiting period is designed to prevent adverse selection and ensure policy sustainability.
+
+PRE-EXISTING CONDITIONS WAITING PERIOD:
+Any disease, ailment, or injury that existed before the policy start date is considered a pre-existing condition. All pre-existing conditions are subject to a waiting period of 730 days (2 years) from the policy commencement date. No claims related to pre-existing conditions will be admissible during this period.
+
+The insured must disclose all pre-existing conditions at the time of policy purchase. Failure to disclose may result in claim rejection and policy cancellation.
+
+SPECIFIC DISEASE WAITING PERIODS:
+Certain specific diseases and procedures carry additional waiting periods:
+- Cataract Surgery: 1 year
+- Joint Replacement: 2 years
+- Hernia: 1 year
+- Hysterectomy: 1 year
+- Bariatric Surgery: 2 years
+- Maternity: 2 years
+
+================================================================================
+SECTION 4: ROOM RENT AND ICU LIMITS
+================================================================================
+
+ROOM RENT LIMITATION:
+Hospital room charges are subject to a sub-limit of Rs. 5,000 per day. If the insured occupies a room with charges exceeding this limit, the proportionate deduction rule will apply to all other expenses including doctor fees, nursing charges, medicines, and investigations.
+
+For example, if room rent is Rs. 10,000 per day (double the limit), all other expenses will be reduced by 50% while processing the claim.
+
+ICU/ICCU CHARGES:
+Intensive Care Unit (ICU) or Intensive Cardiac Care Unit (ICCU) charges are capped at Rs. 10,000 per day. This includes all ICU-related expenses like ventilator charges, monitoring equipment, and specialized nursing.
+
+The room rent proportionate deduction does not apply when the patient is in ICU, as ICU has a separate sub-limit.
+
+================================================================================
+SECTION 5: SUB-LIMITS ON SPECIFIC TREATMENTS
+================================================================================
+
+The following treatments are subject to specific sub-limits:
+
+CATARACT SURGERY:
+Maximum payable per eye: Rs. 40,000. This includes pre-operative tests, surgery charges, lens cost, and post-operative care. If bilateral cataract surgery is performed, the limit applies separately to each eye.
+
+JOINT REPLACEMENT SURGERY:
+Maximum payable per joint: Rs. 1,50,000. This covers knee replacement, hip replacement, and shoulder replacement surgeries. Includes implant cost, surgeon fees, and hospital charges.
+
+HERNIA SURGERY:
+Maximum payable: Rs. 30,000 per surgery. Covers all types of hernia including inguinal, umbilical, and hiatus hernia.
+
+HYSTERECTOMY:
+Maximum payable: Rs. 50,000. This includes total or partial hysterectomy performed for medical reasons.
+
+DIALYSIS:
+Maximum payable per session: Rs. 3,000. Covers hemodialysis and peritoneal dialysis for patients with kidney failure.
+
+SURGERY OVERALL LIMIT:
+Any single surgery, irrespective of type, is subject to a maximum limit of Rs. 2,00,000. This is the overall cap on surgical procedures.
+
+================================================================================
+SECTION 6: COVERED SERVICES
+================================================================================
+
+HOSPITALIZATION:
+Coverage includes expenses for room rent, boarding, nursing, surgeon fees, anesthetist fees, medical practitioner fees, consultant fees, specialist fees, diagnostics, medicines, blood, oxygen, operation theatre charges, surgical appliances, and ICU charges.
+
+Hospitalization means admission to a hospital for a minimum period of 24 consecutive hours except for specified daycare procedures.
+
+PRE-HOSPITALIZATION:
+Medical expenses incurred up to 60 days before hospitalization are covered. This includes diagnostic tests, doctor consultations, and medicines prescribed as part of the treatment that led to hospitalization.
+
+POST-HOSPITALIZATION:
+Medical expenses incurred up to 90 days after discharge are covered. This includes follow-up consultations, medicines, diagnostic tests, and physiotherapy related to the treatment.
+
+AMBULANCE SERVICES:
+Emergency ambulance charges up to Rs. 2,000 per hospitalization are covered. This applies only when the insured is transported to the hospital in an emergency.
+
+DAYCARE PROCEDURES:
+Medical procedures that require hospitalization for less than 24 hours due to technological advances are covered. This includes procedures like cataract surgery, chemotherapy, dialysis, lithotripsy, and tonsillectomy.
+
+================================================================================
+SECTION 7: EXCLUSIONS
+================================================================================
+
+The following are NOT covered under this policy:
+
+COSMETIC AND AESTHETIC TREATMENT:
+Any surgery or treatment for cosmetic or aesthetic purposes, including plastic surgery, unless necessitated by an accident or disease.
+
+DENTAL TREATMENT:
+Dental treatment or surgery of any kind, unless requiring hospitalization due to accident.
+
+FERTILITY AND MATERNITY (Before 2 years):
+Fertility treatments, assisted reproduction, surrogacy, and maternity expenses are not covered before completion of 2 years of continuous coverage.
+
+EXPERIMENTAL TREATMENT:
+Any treatment that is experimental, investigational, or not in line with standard medical practice.
+
+SELF-INFLICTED INJURIES:
+Intentional self-injury, suicide attempts, or injuries sustained under the influence of alcohol or drugs.
+
+WAR AND NUCLEAR RISKS:
+Injury or disease arising from war, invasion, civil war, radiation, or nuclear events.
+
+PRE-EXISTING DISEASES (Before 2 years):
+As mentioned in Section 3, pre-existing conditions are excluded for the first 2 years.
+
+CONGENITAL DISORDERS:
+Any disease or condition present since birth, unless specifically covered by endorsement.
+
+NON-ALLOPATHIC TREATMENT:
+Expenses related to Ayurvedic, Homeopathic, Unani, or other alternative medicine treatments unless hospitalized in a government hospital.
+
+HIV/AIDS:
+Any treatment related to HIV or AIDS is excluded.
+
+ADDICTION TREATMENT:
+Treatment for alcoholism, drug, or substance abuse.
+
+================================================================================
+SECTION 8: NETWORK HOSPITALS
+================================================================================
+
+The insurer has tie-ups with an extensive network of hospitals across the country for cashless treatment. The insured can avail cashless hospitalization by producing the health card and pre-authorization form at any network hospital.
+
+APPROVED NETWORK HOSPITALS include but are not limited to:
+- Apollo Hospitals (all branches)
+- Fortis Healthcare (all branches)
+- Max Healthcare (all branches)
+- Manipal Hospitals (all branches)
+- Columbia Asia (all branches)
+- Medanta - The Medicity
+- KIMS Hospital
+- Narayana Health
+- Kokilaben Dhirubhai Ambani Hospital
+- Lilavati Hospital and Research Centre
+
+For treatment at non-network hospitals, the insured must pay upfront and submit a reimbursement claim within 30 days of discharge.
+
+BLACKLISTED HOSPITALS:
+The following hospitals have been blacklisted due to fraudulent activities and no claims will be entertained from these facilities:
+- Quick Care Clinic
+- Easy Money Hospital
+- City Fraud Center
+- Rapid Claims Hospital
+
+Claims from blacklisted hospitals will be automatically rejected.
+
+================================================================================
+SECTION 9: CLAIM SUBMISSION PROCESS
+================================================================================
+
+CASHLESS CLAIMS:
+1. Contact the insurance company or TPA at least 48 hours before planned hospitalization
+2. Fill the pre-authorization form at the network hospital
+3. The hospital will send the form to TPA for approval
+4. Upon approval, treatment will be provided on cashless basis
+5. The insured must pay deductible and co-payment at the time of discharge
+
+REIMBURSEMENT CLAIMS:
+1. Submit claim form along with original bills, discharge summary, prescriptions, diagnostic reports, and investigation reports
+2. Claims must be submitted within 30 days of discharge
+3. Late submission may result in claim rejection or reduced payment
+4. The company will process the claim within 30 days of receiving complete documents
+
+MANDATORY CLAIM DOCUMENTS:
+- Duly filled claim form
+- Original hospital bills and receipts
+- Discharge summary
+- Doctor's prescriptions
+- Diagnostic test reports
+- Payment receipts
+- Any other document requested by the insurer
+
+================================================================================
+SECTION 10: FRAUD PREVENTION AND INVESTIGATION
+================================================================================
+
+The insurance company takes fraud very seriously and has implemented robust fraud detection mechanisms. All claims are subject to scrutiny and investigation.
+
+FRAUD INDICATORS:
+Claims will be flagged for investigation if they exhibit any of the following characteristics:
+- Treatment at blacklisted hospitals
+- Unusual claim patterns or frequency
+- Claims during waiting period
+- Duplicate invoices or tampered documents
+- Mismatch between diagnosis and treatment
+- Excessive room rent or unnecessary procedures
+- Late submission beyond 30 days without valid reason
+- Non-network hospital claims without emergency justification
+
+HIGH-RISK CLAIMS:
+Claims with fraud scores above certain thresholds will be subjected to manual review and investigation. The insurer reserves the right to reject claims found to be fraudulent and may take legal action against the insured.
+
+The company may conduct hospital visits, verification calls, and document forensic analysis as part of the investigation process.
+
+================================================================================
+SECTION 11: GENERAL TERMS AND CONDITIONS
+================================================================================
+
+RENEWAL:
+This policy is renewable for life subject to payment of renewal premium. The company reserves the right to revise premium at renewal based on claim experience and age.
+
+GRACE PERIOD:
+A grace period of 15 days is provided for premium payment. Coverage continues during the grace period.
+
+CANCELLATION:
+The insured may cancel the policy at any time by giving written notice. Refund of premium will be on short-period scale if no claim has been made.
+
+PORTABILITY:
+The insured has the right to port the policy to another insurer subject to IRDAI regulations.
+
+GRIEVANCE REDRESSAL:
+For any complaints or grievances, contact the grievance officer at grievance@healthinsurance.com or call 1800-XXX-XXXX.
+
+================================================================================
+END OF POLICY DOCUMENT
+================================================================================

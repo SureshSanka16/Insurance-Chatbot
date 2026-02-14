@@ -1,0 +1,1100 @@
+[
+  {
+    "doc_id": "HEALTH_001",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "preamble",
+    "topic": "policy_contract",
+    "text": "This Policy is a contract of insurance between You (the Policyholder) and Us (Vantage Insurance Co.) subject to the receipt of premium. The Policy Schedule specifies which covers are in force and available for the Insured Persons during the Policy Period.",
+    "tags": ["contract", "policy_start", "premium"]
+  },
+  {
+    "doc_id": "HEALTH_002",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "definitions",
+    "topic": "ayush_treatment",
+    "text": "Ayush Treatment: Medical treatment given under Ayurveda, Yoga, Naturopathy, Unani, Siddha, and Homeopathy systems.",
+    "tags": ["definition", "ayush"]
+  },
+  {
+    "doc_id": "HEALTH_003",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "definitions",
+    "topic": "cashless_facility",
+    "text": "Cashless Facility: A facility where the insurer pays the Network Provider directly for the costs of treatment.",
+    "tags": ["definition", "cashless"]
+  },
+  {
+    "doc_id": "HEALTH_004",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "definitions",
+    "topic": "co_payment",
+    "text": "Co-payment: A cost-sharing requirement where the policyholder bears a specified percentage of the admissible claims amount.",
+    "tags": ["definition", "co_payment"]
+  },
+  {
+    "doc_id": "HEALTH_005",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "definitions",
+    "topic": "day_care_treatment",
+    "text": "Day Care Treatment: Medical treatment or surgical procedure undertaken under General or Local Anesthesia in a hospital/day care center in less than 24 hours.",
+    "tags": ["definition", "day_care"]
+  },
+  {
+    "doc_id": "HEALTH_006",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "definitions",
+    "topic": "grace_period",
+    "text": "Grace Period: A period of 15 days (for monthly premiums) or 30 days (for annual premiums) immediately following the premium due date during which payment can be made to renew the policy without loss of continuity benefits.",
+    "tags": ["definition", "grace_period"]
+  },
+  {
+    "doc_id": "HEALTH_007",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "definitions",
+    "topic": "pre_existing_disease",
+    "text": "Pre-Existing Disease (PED): Any condition, ailment, or injury diagnosed or treated up to 36 months prior to the policy inception.",
+    "tags": ["definition", "ped"]
+  },
+  {
+    "doc_id": "HEALTH_008",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "inpatient_hospitalization",
+    "text": "We will cover Medical Expenses for hospitalization (minimum 24 hours) arising from Illness or Injury, including Room Rent, Boarding, Nursing expenses, ICU Charges, Operation Theatre expenses, Surgeon/Anesthetist fees, Medicines, drugs, and consumables prescribed by the treating Medical Practitioner.",
+    "tags": ["coverage", "hospitalization"]
+  },
+  {
+    "doc_id": "HEALTH_009",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "pre_post_hospitalization",
+    "text": "Pre-Hospitalization: Medical expenses incurred up to 30 days before admission. Post-Hospitalization: Medical expenses incurred up to 60 days after discharge. These are payable only if the main In-patient Hospitalization claim is accepted.",
+    "tags": ["coverage", "pre_post_hospitalization"]
+  },
+  {
+    "doc_id": "HEALTH_010",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "day_care_treatment",
+    "text": "We will cover medical expenses for Day Care Treatments (procedures requiring <24 hours hospitalization) listed in our Day Care Annexure, provided they are Medically Necessary.",
+    "tags": ["coverage", "day_care"]
+  },
+  {
+    "doc_id": "HEALTH_011",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "domiciliary_hospitalization",
+    "text": "We cover medical treatment taken at home if the patient cannot be moved to a hospital due to their condition, or no hospital beds are available. Treatment continues for at least 3 consecutive days.",
+    "tags": ["coverage", "domiciliary"]
+  },
+  {
+    "doc_id": "HEALTH_012",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "road_ambulance_cover",
+    "text": "We cover expenses for transporting the Insured Person to the nearest Hospital in an Emergency, up to the limit specified in the Policy Schedule.",
+    "tags": ["coverage", "ambulance"]
+  },
+  {
+    "doc_id": "HEALTH_013",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "organ_donor_expenses",
+    "text": "We cover surgical expenses for harvesting the organ from a donor for the Insured Person, provided the donation conforms to the Transplantation of Human Organs Act.",
+    "tags": ["coverage", "organ_donor"]
+  },
+  {
+    "doc_id": "HEALTH_014",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "reload_sum_insured",
+    "text": "If the Sum Insured is exhausted due to claims, We will reload the full Sum Insured once per Policy Year for subsequent claims. Restriction: The reloaded amount cannot be used for the same illness/injury for which a claim was already paid in the current year.",
+    "tags": ["coverage", "reload"]
+  },
+  {
+    "doc_id": "HEALTH_015",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "coverage",
+    "topic": "cumulative_bonus",
+    "text": "For every claim-free year, the Sum Insured will be increased by 10%, up to a maximum of 50%, without an increase in premium. In the event of a claim, the bonus reduces by 10% in the subsequent year.",
+    "tags": ["coverage", "bonus"]
+  },
+  {
+    "doc_id": "HEALTH_016",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "pre_existing_diseases",
+    "text": "Pre-Existing Diseases (PED): Not covered until 36 months of continuous coverage have elapsed.",
+    "tags": ["exclusion", "ped"]
+  },
+  {
+    "doc_id": "HEALTH_017",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "30_day_waiting_period",
+    "text": "Any illness diagnosed within the first 30 days of the policy start date is excluded (except Accidents).",
+    "tags": ["exclusion", "waiting_period"]
+  },
+  {
+    "doc_id": "HEALTH_018",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "specified_procedures_24_months",
+    "text": "Cataract, Hernia, Joint Replacement, Kidney Stones, etc., are not covered during the first 24 months.",
+    "tags": ["exclusion", "procedure", "waiting_period"]
+  },
+  {
+    "doc_id": "HEALTH_019",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "investigation_evaluation",
+    "text": "Admission primarily for diagnostics/monitoring with no active treatment is not covered.",
+    "tags": ["exclusion", "diagnostics"]
+  },
+  {
+    "doc_id": "HEALTH_020",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "cosmetic_surgery",
+    "text": "Plastic surgery or aesthetic treatments are not covered unless required due to an Accident/Burn.",
+    "tags": ["exclusion", "cosmetic"]
+  },
+  {
+    "doc_id": "HEALTH_021",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "hazardous_sports",
+    "text": "Injuries from skydiving, scuba diving, racing, etc. are not covered.",
+    "tags": ["exclusion", "sports"]
+  },
+  {
+    "doc_id": "HEALTH_022",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "breach_of_law",
+    "text": "Treatment arising from the Insured committing a criminal act is not covered.",
+    "tags": ["exclusion", "law"]
+  },
+  {
+    "doc_id": "HEALTH_023",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "alcohol_drug_abuse",
+    "text": "Treatment for alcoholism, drug addiction, or conditions caused by substance abuse is not covered.",
+    "tags": ["exclusion", "substance_abuse"]
+  },
+  {
+    "doc_id": "HEALTH_024",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "unproven_experimental_treatments",
+    "text": "Treatments lacking significant medical documentation are not covered.",
+    "tags": ["exclusion", "experimental"]
+  },
+  {
+    "doc_id": "HEALTH_025",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "limits",
+    "topic": "sum_insured_limit",
+    "text": "The total liability for all claims in a Policy Year is capped at the Base Sum Insured of ₹5,00,000.",
+    "tags": ["limit", "sum_insured"]
+  },
+  {
+    "doc_id": "HEALTH_026",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "limits",
+    "topic": "cataract_limit",
+    "text": "Cataract Surgery: Up to ₹40,000 per eye.",
+    "tags": ["limit", "cataract"]
+  },
+  {
+    "doc_id": "HEALTH_027",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "limits",
+    "topic": "mental_healthcare_limit",
+    "text": "Mental Healthcare: Up to 25% of Sum Insured (₹1,25,000).",
+    "tags": ["limit", "mental_health"]
+  },
+  {
+    "doc_id": "HEALTH_028",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "limits",
+    "topic": "modern_treatments_limit",
+    "text": "Modern Treatments (e.g., Robotic Surgeries): Up to 50% of Sum Insured (₹2,50,000).",
+    "tags": ["limit", "modern_treatment"]
+  },
+  {
+    "doc_id": "HEALTH_029",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "limits",
+    "topic": "ayush_treatment_limit",
+    "text": "AYUSH Treatment: Up to ₹50,000 per year.",
+    "tags": ["limit", "ayush"]
+  },
+  {
+    "doc_id": "HEALTH_030",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "limits",
+    "topic": "domiciliary_hospitalization_limit",
+    "text": "Domiciliary Hospitalization: Up to 10% of Sum Insured (₹50,000).",
+    "tags": ["limit", "domiciliary"]
+  },
+  {
+    "doc_id": "HEALTH_031",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "network_hospitals",
+    "topic": "network_hospitals_list",
+    "text": "Sample authorized network hospitals: Mumbai - New Family Hospital (Multi-Specialty), Delhi - Nipun Hospital (Rohini) (General Surgery), Bangalore - Sai Sree Hospital (Heart & Trauma), Lucknow - Maa Hospital & Trauma Center (Emergency Care), Pune - Sai Sanjeevani Hospital (Multi-Specialty), Surat - Life Line Hospital (Critical Care).",
+    "tags": ["network", "hospital", "cashless"]
+  },
+  {
+    "doc_id": "HEALTH_032",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "general_terms",
+    "topic": "cancellation",
+    "text": "You may cancel by giving 7 days' notice. Refund is on a pro-rata basis if no claims were made. We may cancel for fraud, misrepresentation, or non-disclosure by giving 15 days' notice (no refund).",
+    "tags": ["general_terms", "cancellation"]
+  },
+  {
+    "doc_id": "HEALTH_033",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "general_terms",
+    "topic": "portability_migration",
+    "text": "You can transfer your policy to another insurer (Portability) or another plan within Vantage (Migration) with credit for waiting periods, provided you apply 45 days before renewal.",
+    "tags": ["general_terms", "portability", "migration"]
+  },
+  {
+    "doc_id": "HEALTH_034",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "general_terms",
+    "topic": "free_look_period",
+    "text": "You have 15 days from receiving the policy to review terms. If unsatisfied, you can cancel for a full refund (less stamp duty/medical costs), provided no claim has been made.",
+    "tags": ["general_terms", "free_look"]
+  },
+  {
+    "doc_id": "HEALTH_035",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "claims",
+    "topic": "cashless_claims_procedure",
+    "text": "Cashless Claims (Network Hospitals): Planned Hospitalization: Notify Vantage TPA at least 72 hours prior to admission. Emergency Hospitalization: Notify Vantage TPA within 24 hours of admission. Show your Vantage Health Card and ID at the hospital insurance desk. We authorize payment directly to the hospital.",
+    "tags": ["claims", "cashless"]
+  },
+  {
+    "doc_id": "HEALTH_036",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "claims",
+    "topic": "reimbursement_claims_procedure",
+    "text": "Reimbursement Claims (Non-Network Hospitals): Notify us within 48 hours of admission. Pay the hospital bill in full at discharge. Submit the following documents within 30 days of discharge: Duly filled Claim Form, Original Hospital Discharge Summary, Original Final Bill and Payment Receipts, Pharmacy/Lab invoices with prescriptions, KYC Documents (ID Proof).",
+    "tags": ["claims", "reimbursement"]
+  },
+  {
+    "doc_id": "HEALTH_037",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "waiting_periods",
+    "topic": "initial_waiting_period",
+    "text": "Initial Waiting Period (30 Days): No claims accepted for any illness diagnosed within the first 30 days, except those arising from an Accident.",
+    "tags": ["waiting_period", "initial"]
+  },
+  {
+    "doc_id": "HEALTH_038",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "waiting_periods",
+    "topic": "specific_disease_waiting_period",
+    "text": "Specific Disease Waiting Period (24 Months): Treatments for Cataract, Hernia, Joint Replacement, and Stones are covered only after 2 years of continuous renewal.",
+    "tags": ["waiting_period", "specific_disease"]
+  },
+  {
+    "doc_id": "HEALTH_039",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "waiting_periods",
+    "topic": "pre_existing_disease_waiting_period",
+    "text": "Pre-Existing Disease (PED) Waiting Period (36 Months): Any condition diagnosed or treated 36 months before the policy start date is covered only after 3 years of continuous coverage.",
+    "tags": ["waiting_period", "ped"]
+  },
+  {
+    "doc_id": "HEALTH_040",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "cosmetic_surgery",
+    "text": "Cosmetic Surgery: Not covered unless resulting from an accident.",
+    "tags": ["exclusion", "cosmetic"]
+  },
+  {
+    "doc_id": "HEALTH_041",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "self_injury",
+    "text": "Self-Injury: Intentional harm or suicide attempts are not covered.",
+    "tags": ["exclusion", "self_injury"]
+  },
+  {
+    "doc_id": "HEALTH_042",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "substance_abuse",
+    "text": "Substance Abuse: Treatment for alcoholism or drug addiction is not covered.",
+    "tags": ["exclusion", "substance_abuse"]
+  },
+  {
+    "doc_id": "HEALTH_043",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "exclusions",
+    "topic": "weight_control",
+    "text": "Weight Control: Obesity treatments are excluded unless they meet strict medical criteria.",
+    "tags": ["exclusion", "obesity"]
+  },
+  {
+    "doc_id": "HEALTH_044",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "grievance",
+    "topic": "grievance_redressal",
+    "text": "In case of any grievance, the Insured Person may contact us via: Toll-Free: 1800-VANTAGE-HELP, Email: grievances@vantagehealth.com, Website: www.vantagehealth.com/support. If unsatisfied with the resolution, you may approach the Insurance Ombudsman.",
+    "tags": ["grievance", "redressal", "contact"]
+  },
+  {
+    "doc_id": "HOME_001",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "preamble",
+    "topic": "policy_contract",
+    "text": "This Policy is a legal contract of insurance between You (the Policyholder) and Us (Vantage Insurance Co.) subject to the receipt of premium in full. The Policy Schedule specifies which covers are in force and available for the Insured Property during the Policy Period.",
+    "tags": ["contract", "policy_start", "premium"]
+  },
+  {
+    "doc_id": "HOME_002",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "definitions",
+    "topic": "home_building",
+    "text": "Home Building: The residential structure including foundations, walls, roof, staircases, and permanent fixtures like plumbing and electrical wiring.",
+    "tags": ["definition", "structure"]
+  },
+  {
+    "doc_id": "HOME_003",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "definitions",
+    "topic": "home_contents",
+    "text": "Home Contents: Household goods, furniture, electronic appliances, and personal effects belonging to You or family members residing with You.",
+    "tags": ["definition", "contents"]
+  },
+  {
+    "doc_id": "HOME_004",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "coverage",
+    "topic": "fire_and_allied_perils",
+    "text": "Burglary: Theft following a forcible and violent entry to or exit from the premises.",
+    "tags": ["definition", "burglary"]
+  },
+  {
+    "doc_id": "HOME_005",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "definitions",
+    "topic": "first_loss_basis",
+    "text": "First Loss Basis: A partial insurance where we cover a percentage of the total value (usually applied to jewelry and high-value contents).",
+    "tags": ["definition", "first_loss"]
+  },
+  {
+    "doc_id": "HOME_006",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "definitions",
+    "topic": "grace_period",
+    "text": "Grace Period: A period of 15 days (for monthly premiums) or 30 days (for annual premiums) immediately following the premium due date during which payment can be made to renew the policy without loss of continuity benefits.",
+    "tags": ["definition", "grace_period"]
+  },
+  {
+    "doc_id": "HOME_007",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "coverage",
+    "topic": "fire_and_allied_perils",
+    "text": "Coverage against fire, explosion, aircraft damage, and lightning.",
+    "tags": ["coverage", "fire", "explosion", "aircraft", "lightning"]
+  },
+  {
+    "doc_id": "HOME_008",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "coverage",
+    "topic": "natural_calamities",
+    "text": "Comprehensive protection against Storm, Typhoon, Flood, Inundation (STFI), Earthquakes, and Landslides.",
+    "tags": ["coverage", "natural_calamities", "stfi", "earthquake", "landslide"]
+  },
+  {
+    "doc_id": "HOME_009",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "coverage",
+    "topic": "burglary_and_theft",
+    "text": "Coverage for loss of contents due to housebreaking or actual/attempted burglary.",
+    "tags": ["coverage", "burglary", "theft"]
+  },
+  {
+    "doc_id": "HOME_010",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "coverage",
+    "topic": "alternate_accommodation",
+    "text": "If your home is uninhabitable due to a covered peril, We will pay for temporary rent (up to ₹20,000/month for 3 months).",
+    "tags": ["coverage", "alternate_accommodation", "rent"]
+  },
+  {
+    "doc_id": "HOME_011",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "coverage",
+    "topic": "removal_of_debris",
+    "text": "Costs incurred to clear the site after a loss, up to 1% of the claim value.",
+    "tags": ["coverage", "debris"]
+  },
+  {
+    "doc_id": "HOME_012",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "coverage",
+    "topic": "public_liability",
+    "text": "Coverage for legal liability for bodily injury or property damage to third parties occurring within the premises.",
+    "tags": ["coverage", "liability"]
+  },
+  {
+    "doc_id": "HOME_013",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "limits",
+    "topic": "sum_insured_limit",
+    "text": "The total liability for all claims in a Policy Year is capped at the Base Sum Insured of ₹8,50,000.",
+    "tags": ["limit", "sum_insured"]
+  },
+  {
+    "doc_id": "HOME_014",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "limits",
+    "topic": "jewelry_and_valuables_limit",
+    "text": "Jewelry & Valuables: Up to 10% of Sum Insured (₹85,000).",
+    "tags": ["limit", "jewelry", "valuables"]
+  },
+  {
+    "doc_id": "HOME_015",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "limits",
+    "topic": "electronic_equipment_limit",
+    "text": "Electronic Equipment: Up to ₹1,50,000 per claim.",
+    "tags": ["limit", "electronics"]
+  },
+  {
+    "doc_id": "HOME_016",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "limits",
+    "topic": "curios_and_art_limit",
+    "text": "Curios & Works of Art: Up to ₹75,000 (subject to valuation).",
+    "tags": ["limit", "art"]
+  },
+  {
+    "doc_id": "HOME_017",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "limits",
+    "topic": "alternate_accommodation_limit",
+    "text": "Alternate Accommodation: Up to ₹20,000 per month.",
+    "tags": ["limit", "alternate_accommodation"]
+  },
+  {
+    "doc_id": "HOME_018",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "exclusions",
+    "topic": "initial_waiting_period",
+    "text": "No coverage for loss occurring within the first 15 days of policy inception.",
+    "tags": ["exclusion", "waiting_period"]
+  },
+  {
+    "doc_id": "HOME_019",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "exclusions",
+    "topic": "unoccupied_home",
+    "text": "Any loss occurring if the home is left vacant for more than 60 consecutive days without prior notice.",
+    "tags": ["exclusion", "vacant"]
+  },
+  {
+    "doc_id": "HOME_020",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "exclusions",
+    "topic": "willful_negligence",
+    "text": "Damage caused by the policyholder's intentional act or failure to take reasonable care.",
+    "tags": ["exclusion", "negligence"]
+  },
+  {
+    "doc_id": "HOME_021",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "exclusions",
+    "topic": "war_nuclear_risk",
+    "text": "Loss arising from war, invasion, or radioactive contamination.",
+    "tags": ["exclusion", "war", "nuclear"]
+  },
+  {
+    "doc_id": "HOME_022",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "general_terms",
+    "topic": "cancellation",
+    "text": "You may cancel by giving 7 days' notice. Refund is on a pro-rata basis if no claims were made.",
+    "tags": ["general_terms", "cancellation"]
+  },
+  {
+    "doc_id": "HOME_023",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "general_terms",
+    "topic": "free_look_period",
+    "text": "You have 15 days from receiving the policy to review terms. If unsatisfied, you can cancel for a full refund.",
+    "tags": ["general_terms", "free_look"]
+  },
+  {
+    "doc_id": "HOME_024",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "claims",
+    "topic": "claim_notification",
+    "text": "Notify Us and the Police (in case of theft/fire) within 24 hours of the incident.",
+    "tags": ["claims", "notification"]
+  },
+  {
+    "doc_id": "HOME_025",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "claims",
+    "topic": "claim_documentation",
+    "text": "Submit the following within 30 days: Duly filled Claim Form, FIR Copy (mandatory for theft/fire/riot), Damaged item photographs, Repair estimates from a certified contractor, KYC Documents (ID Proof).",
+    "tags": ["claims", "documentation"]
+  },
+  {
+    "doc_id": "HOME_026",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "grievance",
+    "topic": "grievance_redressal",
+    "text": "In case of any grievance, the Insured Person may contact us via: Toll-Free: 1800-VANTAGE-HELP, Email: grievances@vantagehousing.com, Website: www.vantagehousing.com/support. If unsatisfied, you may approach the Insurance Ombudsman.",
+    "tags": ["grievance", "redressal", "contact"]
+  },
+  {
+    "doc_id": "LIFE_001",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "preamble",
+    "topic": "policy_contract",
+    "text": "This Policy is a legal contract of life insurance between You (the Policyholder) and Us (Vantage Life Insurance Co.). It is issued based on the declarations made by You in the Proposal Form and is subject to the timely payment of premiums. The Policy Schedule outlines the specific benefits, nominees, and coverage terms applicable to the Insured Person.",
+    "tags": ["contract", "policy_start", "premium"]
+  },
+  {
+    "doc_id": "LIFE_002",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "definitions",
+    "topic": "sum_assured",
+    "text": "Sum Assured: The guaranteed amount payable by Us in the event of the death of the Insured Person during the Policy Term.",
+    "tags": ["definition", "sum_assured"]
+  },
+  {
+    "doc_id": "LIFE_003",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "definitions",
+    "topic": "nominee",
+    "text": "Nominee: The person(s) appointed by You to receive the Death Benefit in the event of the Insured Person's death.",
+    "tags": ["definition", "nominee"]
+  },
+  {
+    "doc_id": "LIFE_004",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "definitions",
+    "topic": "policy_term",
+    "text": "Policy Term: The duration for which the life insurance cover is active, as specified in the Policy Schedule.",
+    "tags": ["definition", "policy_term"]
+  },
+  {
+    "doc_id": "LIFE_005",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "definitions",
+    "topic": "premium_frequency",
+    "text": "Premium Frequency: The interval (Monthly, Quarterly, Half-Yearly, or Annual) at which premiums are due.",
+    "tags": ["definition", "premium_frequency"]
+  },
+  {
+    "doc_id": "LIFE_006",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "definitions",
+    "topic": "grace_period",
+    "text": "Grace Period: A period of 15 days (monthly) or 30 days (other frequencies) from the premium due date during which the policy remains active despite non-payment.",
+    "tags": ["definition", "grace_period"]
+  },
+  {
+    "doc_id": "LIFE_007",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "definitions",
+    "topic": "lapse",
+    "text": "Lapse: The status of the policy when the premium is not paid even after the expiry of the Grace Period, resulting in the cessation of life cover.",
+    "tags": ["definition", "lapse"]
+  },
+  {
+    "doc_id": "LIFE_008",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "coverage",
+    "topic": "death_benefit",
+    "text": "In the unfortunate event of the death of the Insured Person during the Policy Term, We will pay the Sum Assured of ₹10,00,000 to the Nominee, provided the policy is in force.",
+    "tags": ["coverage", "death_benefit"]
+  },
+  {
+    "doc_id": "LIFE_009",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "coverage",
+    "topic": "terminal_illness_benefit",
+    "text": "We will accelerate 50% of the Sum Assured (up to ₹5,00,000) if the Insured Person is diagnosed with a Terminal Illness (expected life span less than 6 months). The remaining Sum Assured will be paid upon death.",
+    "tags": ["coverage", "terminal_illness"]
+  },
+  {
+    "doc_id": "LIFE_010",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "coverage",
+    "topic": "maturity_benefit",
+    "text": "As this is a Pure Term Insurance plan designed for high-protection at low cost, there is no maturity value or survival benefit payable at the end of the Policy Term.",
+    "tags": ["coverage", "maturity"]
+  },
+  {
+    "doc_id": "LIFE_011",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "coverage",
+    "topic": "surrender_value",
+    "text": "This policy does not acquire any surrender value. No amount is payable if the policy is voluntarily terminated before the end of the term.",
+    "tags": ["coverage", "surrender"]
+  },
+  {
+    "doc_id": "LIFE_012",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "optional_riders",
+    "topic": "accidental_death_benefit",
+    "text": "Accidental Death Benefit Rider: Additional ₹2,00,000 in case of accidental death.",
+    "tags": ["rider", "accidental_death"]
+  },
+  {
+    "doc_id": "LIFE_013",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "optional_riders",
+    "topic": "critical_illness_rider",
+    "text": "Critical Illness Rider: Lump sum of ₹5,00,000 upon diagnosis of 32 defined illnesses.",
+    "tags": ["rider", "critical_illness"]
+  },
+  {
+    "doc_id": "LIFE_014",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "optional_riders",
+    "topic": "waiver_of_premium",
+    "text": "Waiver of Premium Rider: All future premiums waived if the Insured becomes totally disabled.",
+    "tags": ["rider", "waiver_of_premium"]
+  },
+  {
+    "doc_id": "LIFE_015",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "general_terms",
+    "topic": "suicide_exclusion",
+    "text": "If the Insured Person commits suicide within 12 months from the date of inception or revival of the policy, the Nominee shall be entitled to only 80% of the total premiums paid, and no Death Benefit shall be payable.",
+    "tags": ["exclusion", "suicide"]
+  },
+  {
+    "doc_id": "LIFE_016",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "general_terms",
+    "topic": "free_look_period",
+    "text": "You have 15 days (30 days if purchased via distance marketing) from the date of receipt of the policy document to review the terms. If You disagree with any terms, You may return the policy for a refund of premiums, subject to deductions for medical exams and stamp duty.",
+    "tags": ["general_terms", "free_look"]
+  },
+  {
+    "doc_id": "LIFE_017",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "general_terms",
+    "topic": "portability_conversion",
+    "text": "You may convert this term plan into a Whole Life or Endowment plan offered by Vantage at the time of renewal, subject to adjusted premiums and underwriting.",
+    "tags": ["general_terms", "portability", "conversion"]
+  },
+  {
+    "doc_id": "LIFE_018",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "claims",
+    "topic": "death_claim_notification",
+    "text": "The Nominee must notify Us of the death of the Insured Person within 90 days of the event. Notification can be made via our web portal, email, or at any Vantage branch.",
+    "tags": ["claims", "notification"]
+  },
+  {
+    "doc_id": "LIFE_019",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "claims",
+    "topic": "documentation_requirements",
+    "text": "The following original documents must be submitted to process the claim: Duly filled Death Claim Form, Original Policy Document, Attested copy of the Death Certificate issued by local municipal authorities, Medical records (Discharge summary/Death summary) if death occurred in a hospital, KYC and Bank Details (Cancelled Cheque) of the Nominee.",
+    "tags": ["claims", "documents"]
+  },
+  {
+    "doc_id": "LIFE_020",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "claims",
+    "topic": "claim_settlement_timeline",
+    "text": "Upon receipt of all mandatory documents, We will process and settle the claim within 30 days. If further investigation is required, the process may be extended to 90 days.",
+    "tags": ["claims", "settlement"]
+  },
+  {
+    "doc_id": "LIFE_021",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "exclusions",
+    "topic": "hazardous_activities",
+    "text": "We will not be liable to pay the Death Benefit if death occurs directly or indirectly due to participation in professional racing, paragliding, or deep sea diving unless declared and accepted.",
+    "tags": ["exclusion", "hazardous_activities"]
+  },
+  {
+    "doc_id": "LIFE_022",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "exclusions",
+    "topic": "war_civil_unrest",
+    "text": "We will not be liable to pay the Death Benefit if death occurs due to war, invasion, or revolutionary activity.",
+    "tags": ["exclusion", "war", "civil_unrest"]
+  },
+  {
+    "doc_id": "LIFE_023",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "exclusions",
+    "topic": "criminal_acts",
+    "text": "We will not be liable to pay the Death Benefit if death results from the Insured's participation in an illegal or criminal act.",
+    "tags": ["exclusion", "criminal_act"]
+  },
+  {
+    "doc_id": "LIFE_024",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "grievance",
+    "topic": "grievance_redressal",
+    "text": "In case of any grievance or query, the Policyholder or Nominee may contact us via: Toll-Free: 1800-VANTAGE-LIFE, Email: support@vantagelife.com, Website: www.vantagelife.com/help. If You are not satisfied with our response, You may approach the Insurance Ombudsman for independent resolution.",
+    "tags": ["grievance", "redressal", "contact"]
+  },
+  {
+    "doc_id": "VEHICLE_001",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "preamble",
+    "topic": "policy_contract",
+    "text": "This Policy is a contract of insurance between You (the Policyholder) and Us (Vantage General Insurance Co.) subject to the receipt of premium. This 'Package Policy' covers both Own Damage (OD) to the insured vehicle and Third-Party Liability (TP) as mandated by the Motor Vehicles Act.",
+    "tags": ["contract", "policy_start", "premium"]
+  },
+  {
+    "doc_id": "VEHICLE_002",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "definitions",
+    "topic": "insured_declared_value",
+    "text": "Insured Declared Value (IDV): The maximum amount payable by Us in case of Total Loss or Theft. It is calculated as the manufacturer's listed selling price minus age-based depreciation.",
+    "tags": ["definition", "idv"]
+  },
+  {
+    "doc_id": "VEHICLE_003",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "definitions",
+    "topic": "third_party_liability",
+    "text": "Third-Party Liability: Legal liability for death, bodily injury, or property damage caused to a third party by the insured vehicle.",
+    "tags": ["definition", "third_party"]
+  },
+  {
+    "doc_id": "VEHICLE_004",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "definitions",
+    "topic": "no_claim_bonus",
+    "text": "No Claim Bonus (NCB): A cumulative discount on the 'Own Damage' premium for every claim-free year, ranging from 20% to 50%.",
+    "tags": ["definition", "ncb"]
+  },
+  {
+    "doc_id": "VEHICLE_005",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "definitions",
+    "topic": "constructive_total_loss",
+    "text": "Constructive Total Loss (CTL): When the aggregate cost of retrieval and repair of the vehicle exceeds 75% of the IDV.",
+    "tags": ["definition", "ctl"]
+  },
+  {
+    "doc_id": "VEHICLE_006",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "coverage",
+    "topic": "own_damage_natural_calamities",
+    "text": "Loss or Damage to the Vehicle (Own Damage): Natural Calamities: Fire, lightning, self-ignition, explosion, earthquake, flood, typhoon, hurricane, storm, inundation, cyclone, hailstorm, frost, or landslide.",
+    "tags": ["coverage", "own_damage", "natural_calamities"]
+  },
+  {
+    "doc_id": "VEHICLE_007",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "coverage",
+    "topic": "own_damage_man_made",
+    "text": "Loss or Damage to the Vehicle (Own Damage): Man-made Calamities: Burglary, housebreaking, theft, riot, strike, malicious act, terrorist activity, and any damage in transit by road, rail, inland waterway, lift, or air.",
+    "tags": ["coverage", "own_damage", "man_made"]
+  },
+  {
+    "doc_id": "VEHICLE_008",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "coverage",
+    "topic": "third_party_liability_coverage",
+    "text": "Third-Party Liability: Death/Bodily Injury: Unlimited coverage for legal liability arising from death or injury to a third party. Property Damage: Coverage for damage to third-party property up to a maximum of ₹20,000.",
+    "tags": ["coverage", "third_party", "liability"]
+  },
+  {
+    "doc_id": "VEHICLE_009",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "coverage",
+    "topic": "personal_accident_cover",
+    "text": "Personal Accident Cover (Owner-Driver): Compulsory cover of ₹2,00,000 for the owner-driver in the event of: Death (100% payout), Loss of two limbs or sight of two eyes (100% payout), Loss of one limb or sight of one eye (50% payout).",
+    "tags": ["coverage", "personal_accident"]
+  },
+  {
+    "doc_id": "VEHICLE_010",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "limits",
+    "topic": "sum_insured_depreciation_schedule",
+    "text": "The IDV is adjusted annually based on the age of the vehicle: Not exceeding 6 months 5%, 6 months to 1 year 15%, 1 year to 2 years 20%, 2 years to 3 years 30%, 3 years to 4 years 40%, 4 years to 5 years 50%.",
+    "tags": ["limit", "idv", "depreciation"]
+  },
+  {
+    "doc_id": "VEHICLE_011",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "exclusions",
+    "topic": "consequential_loss",
+    "text": "Consequential Loss: Depreciation, wear and tear, or mechanical/electrical breakdown.",
+    "tags": ["exclusion", "consequential_loss"]
+  },
+  {
+    "doc_id": "VEHICLE_012",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "exclusions",
+    "topic": "invalid_license",
+    "text": "Invalid License: Damage occurring while the vehicle is driven by someone without a valid driving license.",
+    "tags": ["exclusion", "license"]
+  },
+  {
+    "doc_id": "VEHICLE_013",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "exclusions",
+    "topic": "intoxication",
+    "text": "Intoxication: Claims where the driver was under the influence of alcohol or drugs.",
+    "tags": ["exclusion", "intoxication"]
+  },
+  {
+    "doc_id": "VEHICLE_014",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "exclusions",
+    "topic": "geographical_limits",
+    "text": "Geographical Limits: Loss or damage occurring outside the territory of India.",
+    "tags": ["exclusion", "geography"]
+  },
+  {
+    "doc_id": "VEHICLE_015",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "exclusions",
+    "topic": "usage_breach",
+    "text": "Usage Breach: Using a private car for hire, reward, or organized racing/speed testing.",
+    "tags": ["exclusion", "usage"]
+  },
+  {
+    "doc_id": "VEHICLE_016",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "claims",
+    "topic": "accident_claims_procedure",
+    "text": "Accident Claims (Cashless/Network): Notification: Inform Vantage via the portal or toll-free within 24 hours. Survey: Do not move the vehicle (unless for safety) until a Vantage surveyor inspects it. Network Repair: Take the vehicle to a Vantage Preferred Garage. We will pay the garage directly, minus the Compulsory Deductible.",
+    "tags": ["claims", "accident"]
+  },
+  {
+    "doc_id": "VEHICLE_017",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "claims",
+    "topic": "theft_claims_procedure",
+    "text": "Theft Claims: FIR: An immediate First Information Report (FIR) must be filed with the Police. Documents: Submit the FIR copy, original keys, and the 'Non-Traceable Certificate' from the police to initiate the IDV payout.",
+    "tags": ["claims", "theft"]
+  },
+  {
+    "doc_id": "VEHICLE_018",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "grievance",
+    "topic": "grievance_redressal",
+    "text": "For any disputes regarding claim settlement or policy terms: Toll-Free: 1800-VANTAGE-AUTO, Email: auto.support@vantage.com, Escalation: Contact the Insurance Ombudsman if the internal grievance remains unresolved after 30 days.",
+    "tags": ["grievance", "redressal", "contact"]
+  },
+  {
+    "doc_id": "VEHICLE_019",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "limits",
+    "topic": "compulsory_deductible",
+    "text": "Compulsory Deductible: A mandatory deductible of ₹1,000 applies to all Own Damage claims for vehicles with engine capacity up to 1500cc. For vehicles above 1500cc, the compulsory deductible is ₹2,000. This amount is deducted from every claim settlement. Additional voluntary deductible can be opted for premium discount.",
+    "tags": ["deductible", "limit", "own_damage", "excess"]
+  },
+  {
+    "doc_id": "VEHICLE_020",
+    "product": "VANTAGE Auto Protect – Elite Vehicle V-300",
+    "policy_type": "vehicle_insurance",
+    "section": "limits",
+    "topic": "voluntary_deductible",
+    "text": "Voluntary Deductible: You may opt for an additional voluntary deductible of ₹2,500, ₹5,000, ₹7,500, or ₹15,000. Higher voluntary deductible reduces your premium. The voluntary deductible is added to the compulsory deductible during claim settlement.",
+    "tags": ["deductible", "limit", "voluntary", "premium_discount"]
+  },
+  {
+    "doc_id": "HEALTH_045",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "limits",
+    "topic": "deductible",
+    "text": "Deductible: This policy has no mandatory deductible. However, a voluntary deductible option of ₹10,000, ₹25,000, or ₹50,000 per policy year is available to reduce your premium by 5-15%. The deductible is the amount you pay before insurance coverage begins for each claim.",
+    "tags": ["deductible", "limit", "voluntary", "premium_discount"]
+  },
+  {
+    "doc_id": "HEALTH_046",
+    "product": "VANTAGE Health Shield – Select Health H-200",
+    "policy_type": "health_insurance",
+    "section": "definitions",
+    "topic": "deductible_definition",
+    "text": "Deductible: The fixed amount or percentage of a claim that You must pay out-of-pocket before We pay the remaining eligible expenses. Unlike co-payment which applies to each claim, the deductible typically applies once per policy year across all claims.",
+    "tags": ["definition", "deductible"]
+  },
+  {
+    "doc_id": "HOME_027",
+    "product": "VANTAGE Home Secure – Premier Housing P-400",
+    "policy_type": "home_insurance",
+    "section": "limits",
+    "topic": "deductible",
+    "text": "Deductible: A mandatory deductible of ₹5,000 applies to all claims under this policy. For natural calamity claims (flood, earthquake, storm), an additional deductible of 2% of Sum Insured or ₹10,000 (whichever is higher) applies. Theft claims have a deductible of ₹2,500.",
+    "tags": ["deductible", "limit", "excess"]
+  },
+  {
+    "doc_id": "LIFE_025",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "coverage",
+    "topic": "no_deductible",
+    "text": "Deductible: Life insurance policies do not have deductibles. The full Sum Assured of ₹10,00,000 is payable to the nominee upon the death of the insured, without any deductions (except applicable taxes if any). There is no out-of-pocket expense for the beneficiary.",
+    "tags": ["deductible", "coverage", "sum_assured"]
+  },
+  {
+    "doc_id": "LIFE_026",
+    "product": "VANTAGE Life Secure – Platinum Life L-100",
+    "policy_type": "life_insurance",
+    "section": "pricing",
+    "topic": "premium_plan",
+    "text": "Platinum Life L-100 Plan: Premium of ₹2,000 per month. This comprehensive life insurance plan includes: 1) Term Life coverage with Sum Assured up to ₹1 Crore, 2) Critical Illness Rider covering 32 defined critical illnesses with lump sum payout, 3) Total Disability Benefit providing financial protection if you become permanently disabled. The plan offers tax benefits under Section 80C and 10(10D) of the Income Tax Act.",
+    "tags": ["premium", "price", "plan", "features", "term_life", "critical_illness", "disability"]
+  },
+  {
+    "doc_id": "HEALTH_047",
+    "product": "VANTAGE Health Shield – Select Health H-500",
+    "policy_type": "health_insurance",
+    "section": "pricing",
+    "topic": "premium_plan",
+    "text": "Health Shield H-500 Plan: Premium of ₹500 per month. This health insurance plan includes: 1) Cashless Treatment at 5000+ network hospitals across India, 2) OPD Cover for outpatient consultations, diagnostics, and pharmacy expenses, 3) No Claim Bonus - Sum Insured increases by 10% for every claim-free year (up to 50% maximum). Additional benefits include 24/7 health helpline, free annual health checkups, and ambulance coverage.",
+    "tags": ["premium", "price", "plan", "features", "cashless", "opd", "no_claim_bonus"]
+  },
+  {
+    "doc_id": "VEHICLE_021",
+    "product": "VANTAGE Motor Shield – Drive Secure V-15",
+    "policy_type": "vehicle_insurance",
+    "section": "pricing",
+    "topic": "premium_plan",
+    "text": "Drive Secure V-15 Plan: Premium of ₹800 per month. This comprehensive vehicle insurance plan includes: 1) Zero Depreciation Cover - full claim amount without deduction for parts depreciation, 2) 24/7 Roadside Assistance including towing, flat tire change, battery jumpstart, and fuel delivery, 3) Engine Protect Cover for damage due to water ingression, oil leakage, and hydrostatic lock. Also includes personal accident cover of ₹15 lakhs for owner-driver.",
+    "tags": ["premium", "price", "plan", "features", "zero_dep", "roadside_assist", "engine_protect"]
+  },
+  {
+    "doc_id": "HOME_028",
+    "product": "VANTAGE Home Secure – Home Protect P-50",
+    "policy_type": "home_insurance",
+    "section": "pricing",
+    "topic": "premium_plan",
+    "text": "Home Protect P-50 Plan: Premium of ₹1,200 per month. This comprehensive home insurance plan includes: 1) Fire & Burglary Protection covering damage from fire, lightning, explosion, riot, strike, and theft/burglary, 2) Content Cover protecting household items, furniture, electronics, and valuables up to ₹10 lakhs, 3) Natural Calamity Cover for damage from floods, earthquakes, storms, and cyclones. Also includes public liability coverage and alternative accommodation expenses.",
+    "tags": ["premium", "price", "plan", "features", "fire", "burglary", "content", "natural_calamity"]
+  }
+]

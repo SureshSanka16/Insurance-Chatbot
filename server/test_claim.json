@@ -1,0 +1,18 @@
+{
+    "policy_number": "POL-2026-001",
+    "claimant_name": "John Doe",
+    "type": "Vehicle",
+    "amount": 5000.00,
+    "description": "Car accident - rear-end collision on highway",
+    "vehicle_info": {
+        "makeModel": "Toyota Camry 2022",
+        "regNumber": "ABC-1234",
+        "vin": "1HGBH41JXMN109186",
+        "odometer": "15000",
+        "policeReportFiled": true,
+        "policeReportNo": "PR-2026-12345",
+        "location": "Highway 101, Exit 25",
+        "time": "2026-02-11T14:30:00",
+        "incidentType": "Rear-end collision"
+    }
+}

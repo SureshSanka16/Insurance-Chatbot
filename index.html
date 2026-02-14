@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vantage | Intelligent Claims</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['SF Pro Display', 'Inter', 'system-ui', 'sans-serif'],
+            },
+            colors: {
+              brand: {
+                primary: '#F97316', // Orange 500
+                secondary: '#EA580C', // Orange 600
+                accent: '#F59E0B', // Amber 500
+                dark: '#0F172A', // Slate 900
+                darker: '#020617', // Slate 950
+                light: '#FFF7ED', // Orange 50
+              },
+            },
+            boxShadow: {
+              'glass': '0 8px 32px 0 rgba(249, 115, 22, 0.1)',
+              'glass-hover': '0 8px 32px 0 rgba(249, 115, 22, 0.2)',
+              'glow': '0 0 20px rgba(249, 115, 22, 0.6)',
+              'spatial': '0 25px 50px -12px rgba(15, 23, 42, 0.4)',
+              'ceramic': '0 2px 20px rgba(0, 0, 0, 0.04), 0 10px 40px -10px rgba(249, 115, 22, 0.1)',
+            },
+            animation: {
+              'spin-slow': 'spin 10s linear infinite',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          },
+        },
+      }
+    </script>
+    <style>
+      body {
+        margin: 0;
+        font-family: 'SF Pro Display', 'Inter', sans-serif;
+        overflow: hidden; /* App handles scrolling */
+        background-color: #F8FAFC; /* Slate 50 - Cleaner start */
+      }
+      .dark body {
+        background-color: #020617; /* Slate 950 */
+      }
+      
+      /* Smooth font rendering */
+      * {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar {
+        width: 6px;
+        height: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: rgba(148, 163, 184, 0.3); /* Slate 400 */
+        border-radius: 10px;
+      }
+      .dark ::-webkit-scrollbar-thumb {
+        background: rgba(249, 115, 22, 0.4);
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: rgba(249, 115, 22, 0.6);
+      }
+      
+      /* Glassmorphism Utilities */
+      .glass {
+        background: rgba(255, 255, 255, 0.75);
+        backdrop-filter: blur(24px);
+        -webkit-backdrop-filter: blur(24px);
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+      }
+      .dark .glass {
+        background: rgba(15, 23, 42, 0.6);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: none;
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "framer-motion": "https://esm.sh/framer-motion@^12.33.0",
+    "three": "https://esm.sh/three@^0.182.0",
+    "tailwind-merge": "https://esm.sh/tailwind-merge@^3.4.0",
+    "clsx": "https://esm.sh/clsx@^2.1.1",
+    "recharts": "https://esm.sh/recharts@^3.7.0",
+    "@react-three/fiber": "https://esm.sh/@react-three/fiber@^9.5.0",
+    "@react-three/drei": "https://esm.sh/@react-three/drei@^10.7.7"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-[#F8FAFC] dark:bg-[#020617] text-[#0F172A] dark:text-[#F8FAFC] transition-colors duration-500">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
