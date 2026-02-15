@@ -1,14 +1,15 @@
-
 import { GoogleGenAI, Type } from "@google/genai";
 import { Claim, Document, Policy } from "../types";
 
-// Initializing the GoogleGenAI client using the process.env.API_KEY directly.
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+// Initializing the GoogleGenAI client using the Vite environment variable
+const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
 
-const FAST_MODEL = 'gemini-3-flash-preview';
-const REASONING_MODEL = 'gemini-3-pro-preview';
+const FAST_MODEL = "gemini-3-flash-preview";
+const REASONING_MODEL = "gemini-3-pro-preview";
 
-export const analyzeClaimRisk = async (claim: Claim): Promise<{ score: number; reasoning: string; recommendations: string[] }> => {
+export const analyzeClaimRisk = async (
+  claim: Claim,
+): Promise<{ score: number; reasoning: string; recommendations: string[] }> => {
   try {
     const prompt = `
       You are Vantage AI, a premium insurance fraud detection engine. 
@@ -37,21 +38,26 @@ export const analyzeClaimRisk = async (claim: Claim): Promise<{ score: number; r
           properties: {
             score: { type: Type.INTEGER },
             reasoning: { type: Type.STRING },
-            recommendations: { type: Type.ARRAY, items: { type: Type.STRING } }
+            recommendations: { type: Type.ARRAY, items: { type: Type.STRING } },
           },
-          required: ['score', 'reasoning', 'recommendations']
-        }
-      }
+          required: ["score", "reasoning", "recommendations"],
+        },
+      },
     });
 
-    const result = JSON.parse(response.text || '{}');
+    const result = JSON.parse(response.text || "{}");
     return result;
   } catch (error) {
     console.error("AI Analysis Failed:", error);
     return {
       score: claim.riskScore,
-      reasoning: "AI services are currently under heavy load. System baseline risk preserved.",
-      recommendations: ["Perform manual verification of police report", "Cross-reference IP address history", "Wait for secondary AI verification"]
+      reasoning:
+        "AI services are currently under heavy load. System baseline risk preserved.",
+      recommendations: [
+        "Perform manual verification of police report",
+        "Cross-reference IP address history",
+        "Wait for secondary AI verification",
+      ],
     };
   }
 };
@@ -59,34 +65,82 @@ export const analyzeClaimRisk = async (claim: Claim): Promise<{ score: number; r
 /**
  * Generates an executive strategic report based on current operational data.
  */
-export const generateStrategicReport = async (data: { claimsCount: number, fraudValue: string, riskDist: any[] }): Promise<string> => {
+export const generateStrategicReport = async (data: {
+  claimsCount: number;
+  fraudValue: string;
+  riskDist: any[];
+}): Promise<string> => {
   try {
+    // Calculate key metrics for deeper analysis
+    const totalRiskCount = data.riskDist.reduce((sum, r) => sum + r.value, 0);
+    const criticalPercentage =
+      totalRiskCount > 0
+        ? (
+            ((data.riskDist.find((r) => r.name === "Critical")?.value || 0) /
+              totalRiskCount) *
+            100
+          ).toFixed(1)
+        : "0.0";
+    const highRiskPercentage =
+      totalRiskCount > 0
+        ? (
+            ((data.riskDist.find((r) => r.name === "High Risk")?.value || 0) /
+              totalRiskCount) *
+            100
+          ).toFixed(1)
+        : "0.0";
+
     const prompt = `
-      You are the Vantage Chief Strategy Officer AI. Generate a concise, high-impact executive strategic report.
+      You are the Vantage Chief Strategy Officer AI. Generate a concise, high-impact executive strategic report based on REAL-TIME operational data.
       
-      Operational Context:
-      - Total active claims: ${data.claimsCount}
-      - Estimated fraud prevented: ${data.fraudValue}
-      - Risk distribution: ${JSON.stringify(data.riskDist)}
+      CURRENT OPERATIONAL METRICS:
+      - Total Active Claims in Pipeline: ${data.claimsCount}
+      - Fraud Successfully Prevented: ${data.fraudValue}
+      - Critical Risk Cases: ${criticalPercentage}% of total claims
+      - High Risk Cases: ${highRiskPercentage}% of total claims
+      - Risk Distribution Breakdown: 
+        ${data.riskDist.map((r) => `  • ${r.name}: ${r.value} claims`).join("\n        ")}
       
-      Format the response as clear markdown with these sections:
-      1. Executive Overview (2-3 sentences)
-      2. Critical Risk Assessment
-      3. Operational Efficiency Gains
-      4. Strategic Forward Recommendations (Bullet points)
+      REPORT STRUCTURE (Use clean, professional markdown):
       
-      Tone: Professional, authoritative, data-driven.
+      ## Executive Summary
+      Provide 2-3 powerful sentences summarizing the current state of operations, highlighting the most critical insights from the data.
+      
+      ## Risk Landscape Analysis
+      - Analyze the risk distribution pattern
+      - Identify concerning trends (high % of critical/high risk)
+      - Compare fraud prevention success rate
+      - Flag any anomalies or areas requiring immediate attention
+      
+      ## Operational Performance
+      - Assess current throughput (${data.claimsCount} claims)
+      - Evaluate fraud detection effectiveness (${data.fraudValue} prevented)
+      - Calculate implied approval rates and processing efficiency
+      - Identify bottlenecks or inefficiencies
+      
+      ## Strategic Recommendations
+      Provide 4-6 specific, actionable recommendations based on the data:
+      - If critical risk % is high (>10%), recommend enhanced screening protocols
+      - If fraud prevention is strong, suggest scaling the model
+      - If claim volume is high, recommend automation expansion
+      - Include risk mitigation strategies
+      - Suggest resource allocation optimizations
+      
+      TONE: Professional, data-driven, authoritative. Use specific numbers from the data provided. Be direct and actionable.
     `;
 
     const response = await ai.models.generateContent({
       model: FAST_MODEL,
       contents: prompt,
       config: {
-        systemInstruction: "You are an elite insurance strategy consultant. Your goal is to optimize claim operations and mitigate risk through AI-driven insights.",
-      }
+        systemInstruction:
+          "You are an elite insurance strategy consultant with expertise in fraud detection, risk assessment, and operational optimization. Your goal is to provide actionable insights based on real-time data to improve claim operations and mitigate risk through AI-driven intelligence.",
+      },
     });
 
-    return response.text || "Report generation timed out. Please retry analysis.";
+    return (
+      response.text || "Report generation timed out. Please retry analysis."
+    );
   } catch (error) {
     return "The strategic engine is currently recalibrating. Data-driven insights will resume shortly.";
   }
@@ -97,9 +151,15 @@ export const generateStrategicReport = async (data: { claimsCount: number, fraud
  * Generates a clean, human-readable claim form based on policy type.
  */
 export const generateClaimForm = async (
-  policy: Policy, 
-  userProfile: any, 
-  incidentDetails: { date: string; time?: string; location?: string; description: string; items: { item: string; cost: number }[] }
+  policy: Policy,
+  userProfile: any,
+  incidentDetails: {
+    date: string;
+    time?: string;
+    location?: string;
+    description: string;
+    items: { item: string; cost: number }[];
+  },
 ): Promise<string> => {
   try {
     const systemInstruction = `
@@ -299,8 +359,8 @@ Policy Metadata:
 
 User Incident Details:
 - date: ${incidentDetails.date}
-- time: ${incidentDetails.time || 'Not Provided'}
-- location: ${incidentDetails.location || 'Not Provided'}
+- time: ${incidentDetails.time || "Not Provided"}
+- location: ${incidentDetails.location || "Not Provided"}
 - description: ${incidentDetails.description}
 - items: ${JSON.stringify(incidentDetails.items)}
     `;
@@ -310,7 +370,7 @@ User Incident Details:
       contents: inputData,
       config: {
         systemInstruction: systemInstruction,
-      }
+      },
     });
 
     return response.text || "Failed to generate claim form.";
@@ -506,7 +566,7 @@ Date:
       contents: rawText,
       config: {
         systemInstruction: systemInstruction,
-      }
+      },
     });
 
     return response.text || "Failed to normalize document.";
@@ -516,39 +576,47 @@ Date:
   }
 };
 
-export const summarizeDocument = async (fileName: string, fileType: string): Promise<string> => {
-    try {
-        const response = await ai.models.generateContent({
-            model: FAST_MODEL,
-            contents: `Summarize the typical contents of an insurance document named "${fileName}" (${fileType}) in exactly 15 words.`,
-        });
-        return response.text || "Summary unavailable.";
-    } catch (error) {
-        return "Standard insurance documentation relating to current claim profile.";
-    }
+export const summarizeDocument = async (
+  fileName: string,
+  fileType: string,
+): Promise<string> => {
+  try {
+    const response = await ai.models.generateContent({
+      model: FAST_MODEL,
+      contents: `Summarize the typical contents of an insurance document named "${fileName}" (${fileType}) in exactly 15 words.`,
+    });
+    return response.text || "Summary unavailable.";
+  } catch (error) {
+    return "Standard insurance documentation relating to current claim profile.";
+  }
 };
 
-export const extractDocumentEntities = async (doc: Document): Promise<Record<string, string>> => {
+export const extractDocumentEntities = async (
+  doc: Document,
+): Promise<Record<string, string>> => {
   try {
-     const response = await ai.models.generateContent({
-       model: FAST_MODEL,
-       contents: `Simulate OCR extraction for "${doc.name}" in category "${doc.category}". Return JSON with 5 realistic insurance fields.`,
-       config: { responseMimeType: "application/json" }
-     });
-     return JSON.parse(response.text || '{}');
+    const response = await ai.models.generateContent({
+      model: FAST_MODEL,
+      contents: `Simulate OCR extraction for "${doc.name}" in category "${doc.category}". Return JSON with 5 realistic insurance fields.`,
+      config: { responseMimeType: "application/json" },
+    });
+    return JSON.parse(response.text || "{}");
   } catch (e) {
-    return { "OCR Status": "Partial Failure", "Extraction": "Manual Review Required" };
+    return {
+      "OCR Status": "Partial Failure",
+      Extraction: "Manual Review Required",
+    };
   }
 };
 
 export const detectFraudPatterns = async (claims: Claim[]): Promise<string> => {
   try {
     // Extract relevant fields for the specific fraud checks
-    const analysisData = claims.map(c => ({
+    const analysisData = claims.map((c) => ({
       id: c.id,
       amount: c.amount,
       phoneNumber: c.phoneNumber,
-      description: c.description
+      description: c.description,
     }));
 
     const prompt = `
@@ -574,24 +642,31 @@ export const detectFraudPatterns = async (claims: Claim[]): Promise<string> => {
 
     const response = await ai.models.generateContent({
       model: FAST_MODEL,
-      contents: prompt
+      contents: prompt,
     });
-    return response.text || "No distinct fraud patterns detected in current batch.";
+    return (
+      response.text || "No distinct fraud patterns detected in current batch."
+    );
   } catch (e) {
     return "Fraud detection algorithm is currently being updated. Manual monitoring recommended.";
   }
-}
+};
 
-export const chatWithCopilot = async (message: string, context?: string): Promise<string> => {
+export const chatWithCopilot = async (
+  message: string,
+  context?: string,
+): Promise<string> => {
   try {
     const response = await ai.models.generateContent({
       model: FAST_MODEL,
       contents: message,
       config: {
-        systemInstruction: `You are Aura, the Vantage AI assistant. You are direct, professional, and insightful. Context: ${context || 'Dashboard'}.`,
-      }
+        systemInstruction: `You are Aura, the Vantage AI assistant. You are direct, professional, and insightful. Context: ${context || "Dashboard"}.`,
+      },
     });
-    return response.text || "I'm processing the data. Please rephrase your query.";
+    return (
+      response.text || "I'm processing the data. Please rephrase your query."
+    );
   } catch (error) {
     return "I'm experiencing a connectivity issue with the neural engine. Please try again.";
   }

@@ -59,6 +59,43 @@ async def analyze_claim_with_rules(
     # Get claim history
     claim_history = await _get_user_claim_history(user_id, db)
     
+    # ============================================================================
+    # RULE 0: CRITICAL - Check if claim type matches policy category
+    # ============================================================================
+    claim_type = claim_data.get("claim_type", "").strip()
+    policy_category = policy.category.value if hasattr(policy.category, 'value') else str(policy.category)
+    
+    rule_name = "🚨 Policy Type Validation"
+    
+    # Normalize types for comparison (case-insensitive)
+    claim_type_normalized = claim_type.lower()
+    policy_category_normalized = policy_category.lower()
+    
+    # Check for exact mismatch
+    if claim_type_normalized != policy_category_normalized:
+        risk_score += 50  # CRITICAL FRAUD INDICATOR - High penalty
+        fraud_indicators.append(
+            f"⛔ CRITICAL: Claim type '{claim_type}' does not match policy category '{policy_category}'"
+        )
+        rules_checked.append({
+            "rule": rule_name,
+            "result": "🚨 CRITICAL MISMATCH",
+            "impact": "+50 points",
+            "detail": f"Attempting to file {claim_type} claim on {policy_category} policy - MAJOR FRAUD INDICATOR"
+        })
+        logger.warning(
+            f"[CRITICAL-FRAUD] Policy type mismatch detected! "
+            f"Claim type: {claim_type}, Policy category: {policy_category}"
+        )
+    else:
+        rules_checked.append({
+            "rule": rule_name,
+            "result": "✅ VALIDATED",
+            "impact": "0 points",
+            "detail": f"Claim type matches policy category ({policy_category})"
+        })
+        logger.info(f"[RULE-FRAUD] Policy type validation passed: {claim_type} = {policy_category}")
+    
     # Rule 1: Check claim amount vs policy coverage
     claim_amount = float(claim_data.get("claim_amount", 0))
     coverage_amount = float(policy.coverage_amount)
@@ -80,12 +117,21 @@ async def analyze_claim_with_rules(
         rules_checked.append({"rule": rule_name, "result": "✅ PASS", "impact": "0 points", "detail": f"Claim (${claim_amount:,.0f}) is within normal range ({(claim_amount/coverage_amount*100):.1f}% of coverage)"})
     
     # Rule 2: Check policy age (new policies are higher risk)
+    # Note: Added Rule 0 above (Policy Type Validation), so numbering continues
     policy_age_days = (datetime.utcnow().date() - policy.created_at.date()).days
     rule_name = "📅 Policy Age Check"
-    if policy_age_days < 30:
-        risk_score += 20
+    if policy_age_days <= 1:  # Same-day or next-day claim
+        risk_score += 60  # CRITICAL - Immediate claim is major red flag
+        fraud_indicators.append(f"⚠️ CRITICAL: Policy activated only {policy_age_days} day(s) ago - immediate claim highly suspicious")
+        rules_checked.append({"rule": rule_name, "result": "🚨 CRITICAL", "impact": "+60 points", "detail": f"Policy activated only {policy_age_days} day(s) ago - IMMEDIATE CLAIM FRAUD INDICATOR"})
+    elif policy_age_days < 7:  # Less than 1 week
+        risk_score += 40  # Very suspicious
+        fraud_indicators.append(f"Policy is extremely new (activated {policy_age_days} days ago)")
+        rules_checked.append({"rule": rule_name, "result": "⚠️ CRITICAL", "impact": "+40 points", "detail": f"Policy activated only {policy_age_days} days ago (critical risk period)"})
+    elif policy_age_days < 30:  # Less than 1 month
+        risk_score += 25
         fraud_indicators.append(f"Policy is very new (activated {policy_age_days} days ago)")
-        rules_checked.append({"rule": rule_name, "result": "⚠️ WARNING", "impact": "+20 points", "detail": f"Policy activated only {policy_age_days} days ago (high risk period)"})
+        rules_checked.append({"rule": rule_name, "result": "⚠️ WARNING", "impact": "+25 points", "detail": f"Policy activated only {policy_age_days} days ago (high risk period)"})
     elif policy_age_days < 90:
         risk_score += 10
         fraud_indicators.append(f"Policy is relatively new ({policy_age_days} days old)")
@@ -157,9 +203,19 @@ async def analyze_claim_with_rules(
     rule_name = "🔍 Duplicate Detection"
     similar_claims = _find_similar_claims(claim_data, claim_history)
     if similar_claims:
-        risk_score += 20
-        fraud_indicators.append(f"Similar claim found: filed {similar_claims[0].submission_date.strftime('%Y-%m-%d')}")
-        rules_checked.append({"rule": rule_name, "result": "⚠️ ALERT", "impact": "+20 points", "detail": f"Similar claim filed on {similar_claims[0].submission_date.strftime('%Y-%m-%d')}"})
+        days_since_similar = (datetime.utcnow() - similar_claims[0].submission_date).days
+        if days_since_similar <= 7:  # Within same week
+            risk_score += 50  # CRITICAL - Duplicate within week
+            fraud_indicators.append(f"⚠️ CRITICAL: Nearly identical claim filed {days_since_similar} day(s) ago - possible duplicate fraud")
+            rules_checked.append({"rule": rule_name, "result": "🚨 CRITICAL", "impact": "+50 points", "detail": f"Similar claim filed {days_since_similar} day(s) ago - DUPLICATE FRAUD INDICATOR"})
+        elif days_since_similar <= 30:  # Within same month
+            risk_score += 35
+            fraud_indicators.append(f"Similar claim filed {days_since_similar} days ago")
+            rules_checked.append({"rule": rule_name, "result": "⚠️ ALERT", "impact": "+35 points", "detail": f"Similar claim filed {days_since_similar} days ago - high duplicate risk"})
+        else:
+            risk_score += 20
+            fraud_indicators.append(f"Similar claim found: filed {similar_claims[0].submission_date.strftime('%Y-%m-%d')}")
+            rules_checked.append({"rule": rule_name, "result": "⚠️ CAUTION", "impact": "+20 points", "detail": f"Similar claim filed on {similar_claims[0].submission_date.strftime('%Y-%m-%d')}"})
     else:
         rules_checked.append({"rule": rule_name, "result": "✅ PASS", "impact": "0 points", "detail": "No duplicate or similar claims found"})
     
@@ -167,17 +223,20 @@ async def analyze_claim_with_rules(
     risk_score = min(risk_score, 100)
     
     # Determine risk level and decision
-    if risk_score >= 75:
-        risk_level = "HIGH"
+    if risk_score >= 70:
+        risk_level = "CRITICAL"
         decision = "FRAUD_ALERT"
     elif risk_score >= 50:
-        risk_level = "MEDIUM"
+        risk_level = "HIGH"
         decision = "MANUAL_REVIEW"
     elif risk_score >= 30:
         risk_level = "MEDIUM"
         decision = "MANUAL_REVIEW"
-    else:
+    elif risk_score >= 15:
         risk_level = "LOW"
+        decision = "STANDARD_REVIEW"
+    else:
+        risk_level = "VERY_LOW"
         decision = "AUTO_APPROVE"
     
     # Generate reasoning
@@ -326,14 +385,16 @@ def _generate_reasoning(score: int, level: str, indicators: List[str], claim_dat
     reasoning = f"✅ Rule-based fraud analysis for {claim_type} claim (${claim_amount:,.0f}):\n\n"
     
     # Summary
-    if score >= 75:
-        reasoning += "⚠️ HIGH RISK - Multiple fraud indicators detected:\n"
+    if score >= 70:
+        reasoning += "🚨 CRITICAL RISK - Severe fraud indicators detected:\n"
     elif score >= 50:
-        reasoning += "⚡ MEDIUM RISK - Some concerning patterns identified:\n"
+        reasoning += "⚠️ HIGH RISK - Multiple concerning patterns identified:\n"
     elif score >= 30:
-        reasoning += "⚠️ MODERATE RISK - Minor concerns noted:\n"
+        reasoning += "⚡ MEDIUM RISK - Some concerns noted:\n"
+    elif score >= 15:
+        reasoning += "⚠️ LOW RISK - Minor concerns present:\n"
     else:
-        reasoning += "✅ LOW RISK - Claim appears legitimate:\n"
+        reasoning += "✅ VERY LOW RISK - Claim appears legitimate:\n"
     
     reasoning += "\n📋 ALL FRAUD DETECTION RULES EVALUATED:\n"
     reasoning += "─" * 60 + "\n"
@@ -362,12 +423,16 @@ def _generate_reasoning(score: int, level: str, indicators: List[str], claim_dat
     reasoning += f"Rules Checked: {len(rules_checked)}\n\n"
     
     reasoning += f"💡 RECOMMENDATION: "
-    if score >= 75:
-        reasoning += "Requires immediate fraud investigation"
+    if score >= 70:
+        reasoning += "⚠️ REJECT CLAIM - Requires immediate fraud investigation and legal review"
     elif score >= 50:
-        reasoning += "Manual review recommended before approval"
+        reasoning += "⚠️ MANDATORY MANUAL REVIEW - Senior adjuster approval required before any action"
+    elif score >= 30:
+        reasoning += "⚠️ STANDARD MANUAL REVIEW - Supervisor review recommended"
+    elif score >= 15:
+        reasoning += "Standard approval process with basic verification"
     else:
-        reasoning += "Standard approval process can proceed"
+        reasoning += "Expedited approval process can proceed"
     
     return reasoning
 

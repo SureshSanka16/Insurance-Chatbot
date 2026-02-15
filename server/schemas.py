@@ -89,6 +89,14 @@ class PolicyResponse(BaseModel):
         from_attributes = True
 
 
+class PolicyUpdate(BaseModel):
+    """Schema for updating a policy."""
+    status: Optional[str] = None  # 'Active', 'Expired', 'Pending'
+    
+    class Config:
+        from_attributes = True
+
+
 # Document Schemas
 class DocumentUpload(BaseModel):
     """Schema for uploading a document."""

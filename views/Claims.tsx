@@ -88,6 +88,294 @@ const formatDateTime = (raw?: string | null): string => {
   }
 };
 
+// --- AI Reasoning Formatter ---
+const formatAiReasoning = (reasoning: string | undefined) => {
+  if (!reasoning) {
+    return (
+      <p className="text-xs text-gray-500 leading-relaxed">
+        Standard claim profile. Perform AI Deep Scan for detailed pattern
+        recognition.
+      </p>
+    );
+  }
+
+  // Split into sections
+  const sections = reasoning.split(/(?=📋|🚩|📊|💡)/);
+
+  return (
+    <div className="space-y-4">
+      {sections.map((section, idx) => {
+        // Header section (first line)
+        if (section.includes("Rule-based fraud analysis")) {
+          const lines = section.split("\n").filter((line) => line.trim());
+          const headerLine = lines[0];
+          const riskLine = lines.find(
+            (line) =>
+              line.includes("CRITICAL RISK") ||
+              line.includes("HIGH RISK") ||
+              line.includes("MODERATE RISK"),
+          );
+
+          return (
+            <div
+              key={idx}
+              className="pb-3 border-b border-gray-200 dark:border-white/10"
+            >
+              <div className="flex items-start gap-2">
+                <span className="text-base">✅</span>
+                <div className="flex-1">
+                  <p className="text-xs font-semibold text-gray-700 dark:text-gray-300">
+                    {headerLine
+                      .replace("✅ Rule-based fraud analysis for ", "")
+                      .replace(":", "")}
+                  </p>
+                  {riskLine && (
+                    <p
+                      className={cn(
+                        "text-xs font-bold mt-1",
+                        riskLine.includes("CRITICAL")
+                          ? "text-red-600 dark:text-red-400"
+                          : riskLine.includes("HIGH")
+                            ? "text-orange-600 dark:text-orange-400"
+                            : "text-yellow-600 dark:text-yellow-400",
+                      )}
+                    >
+                      {riskLine.trim()}
+                    </p>
+                  )}
+                </div>
+              </div>
+            </div>
+          );
+        }
+
+        // Rules section
+        if (section.includes("📋 ALL FRAUD DETECTION RULES")) {
+          const ruleMatches = section.matchAll(
+            /(\d+)\.\s+(🚨|⚠️|✅)\s+([^\n]+)\s+Result:\s+(🚨 CRITICAL|⚠️ CAUTION|⚠️ SUSPICIOUS|✅ PASS|✅ VALIDATED)[^\n]*\|[^\n]*Impact:\s+([^\n]+)\s+Detail:\s+([^\n]+)/g,
+          );
+          const rules = Array.from(ruleMatches);
+
+          if (rules.length > 0) {
+            return (
+              <div key={idx} className="space-y-2">
+                <div className="flex items-center gap-2 mb-3">
+                  <span className="text-sm">📋</span>
+                  <h4 className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                    Fraud Detection Rules
+                  </h4>
+                </div>
+                <div className="space-y-1.5 max-h-[300px] overflow-y-auto custom-scrollbar pr-2">
+                  {rules.map((rule, ruleIdx) => {
+                    const [_, num, emoji, name, result, impact, detail] = rule;
+                    const isCritical = result.includes("CRITICAL");
+                    const isCaution =
+                      result.includes("CAUTION") ||
+                      result.includes("SUSPICIOUS");
+
+                    return (
+                      <div
+                        key={ruleIdx}
+                        className={cn(
+                          "p-2.5 rounded-lg border text-xs",
+                          isCritical
+                            ? "bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-900/30"
+                            : isCaution
+                              ? "bg-yellow-50 dark:bg-yellow-900/10 border-yellow-200 dark:border-yellow-900/30"
+                              : "bg-green-50 dark:bg-green-900/10 border-green-200 dark:border-green-900/30",
+                        )}
+                      >
+                        <div className="flex items-start gap-2 mb-1">
+                          <span className="text-sm shrink-0">{emoji}</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-semibold text-gray-800 dark:text-gray-200 leading-tight">
+                              {name.trim()}
+                            </p>
+                            <div className="flex items-center gap-2 mt-0.5">
+                              <span
+                                className={cn(
+                                  "font-bold text-[10px] uppercase",
+                                  isCritical
+                                    ? "text-red-600 dark:text-red-400"
+                                    : isCaution
+                                      ? "text-yellow-600 dark:text-yellow-400"
+                                      : "text-green-600 dark:text-green-400",
+                                )}
+                              >
+                                {result
+                                  .replace("🚨 ", "")
+                                  .replace("⚠️ ", "")
+                                  .replace("✅ ", "")}
+                              </span>
+                              <span className="text-gray-500 dark:text-gray-400 text-[10px]">
+                                {impact.trim()}
+                              </span>
+                            </div>
+                            <p className="text-gray-600 dark:text-gray-400 mt-1 text-[10px] leading-snug">
+                              {detail.trim()}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+        }
+
+        // Fraud indicators section
+        if (section.includes("🚩 FRAUD INDICATORS FLAGGED")) {
+          const lines = section
+            .split("\n")
+            .filter((line) => line.trim() && !line.includes("──────"));
+          const indicators = lines
+            .slice(1)
+            .filter((line) => line.match(/^\d+\./));
+
+          if (indicators.length > 0) {
+            return (
+              <div key={idx} className="space-y-2">
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="text-sm">🚩</span>
+                  <h4 className="text-xs font-bold text-red-600 dark:text-red-400 uppercase tracking-wide">
+                    Fraud Indicators
+                  </h4>
+                </div>
+                <div className="space-y-1">
+                  {indicators.map((indicator, iIdx) => {
+                    const clean = indicator
+                      .replace(/^\d+\.\s*/, "")
+                      .replace(/^⚠️\s*CRITICAL:\s*/, "")
+                      .trim();
+                    return (
+                      <div
+                        key={iIdx}
+                        className="flex items-start gap-2 p-2 bg-red-50 dark:bg-red-900/10 rounded border border-red-200 dark:border-red-900/30"
+                      >
+                        <AlertTriangle
+                          size={12}
+                          className="text-red-500 mt-0.5 shrink-0"
+                        />
+                        <p className="text-xs text-red-700 dark:text-red-300 leading-snug">
+                          {clean}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+            );
+          }
+        }
+
+        // Final analysis section
+        if (section.includes("📊 FINAL ANALYSIS")) {
+          const lines = section
+            .split("\n")
+            .filter((line) => line.trim() && !line.includes("──────"));
+          const riskScoreLine = lines.find((line) =>
+            line.includes("Risk Score:"),
+          );
+          const redFlagsLine = lines.find((line) =>
+            line.includes("Red Flags:"),
+          );
+          const rulesCheckedLine = lines.find((line) =>
+            line.includes("Rules Checked:"),
+          );
+          const recommendationLine = lines.find((line) =>
+            line.includes("💡 RECOMMENDATION"),
+          );
+          const recommendationText =
+            lines[lines.indexOf(recommendationLine || "") + 1];
+
+          return (
+            <div
+              key={idx}
+              className="space-y-2 pt-2 border-t border-gray-200 dark:border-white/10"
+            >
+              <div className="flex items-center gap-2 mb-2">
+                <span className="text-sm">📊</span>
+                <h4 className="text-xs font-bold text-gray-700 dark:text-gray-300 uppercase tracking-wide">
+                  Final Analysis
+                </h4>
+              </div>
+              <div className="grid grid-cols-3 gap-2">
+                {riskScoreLine && (
+                  <div className="p-2 bg-gray-50 dark:bg-white/5 rounded border border-gray-200 dark:border-white/10">
+                    <p className="text-[9px] text-gray-500 dark:text-gray-400 uppercase font-bold mb-0.5">
+                      Risk Score
+                    </p>
+                    <p className="text-xs font-bold text-gray-800 dark:text-gray-200">
+                      {riskScoreLine.split(":")[1]?.trim()}
+                    </p>
+                  </div>
+                )}
+                {redFlagsLine && (
+                  <div className="p-2 bg-gray-50 dark:bg-white/5 rounded border border-gray-200 dark:border-white/10">
+                    <p className="text-[9px] text-gray-500 dark:text-gray-400 uppercase font-bold mb-0.5">
+                      Red Flags
+                    </p>
+                    <p className="text-xs font-bold text-gray-800 dark:text-gray-200">
+                      {redFlagsLine.split(":")[1]?.trim()}
+                    </p>
+                  </div>
+                )}
+                {rulesCheckedLine && (
+                  <div className="p-2 bg-gray-50 dark:bg-white/5 rounded border border-gray-200 dark:border-white/10">
+                    <p className="text-[9px] text-gray-500 dark:text-gray-400 uppercase font-bold mb-0.5">
+                      Rules Checked
+                    </p>
+                    <p className="text-xs font-bold text-gray-800 dark:text-gray-200">
+                      {rulesCheckedLine.split(":")[1]?.trim()}
+                    </p>
+                  </div>
+                )}
+              </div>
+              {recommendationText && (
+                <div
+                  className={cn(
+                    "p-3 rounded-lg border mt-2",
+                    recommendationText.includes("REJECT")
+                      ? "bg-red-50 dark:bg-red-900/10 border-red-200 dark:border-red-900/30"
+                      : recommendationText.includes("APPROVE")
+                        ? "bg-green-50 dark:bg-green-900/10 border-green-200 dark:border-green-900/30"
+                        : "bg-yellow-50 dark:bg-yellow-900/10 border-yellow-200 dark:border-yellow-900/30",
+                  )}
+                >
+                  <div className="flex items-start gap-2">
+                    <span className="text-sm">💡</span>
+                    <div>
+                      <p className="text-[9px] text-gray-500 dark:text-gray-400 uppercase font-bold mb-1">
+                        Recommendation
+                      </p>
+                      <p
+                        className={cn(
+                          "text-xs font-semibold leading-snug",
+                          recommendationText.includes("REJECT")
+                            ? "text-red-700 dark:text-red-300"
+                            : recommendationText.includes("APPROVE")
+                              ? "text-green-700 dark:text-green-300"
+                              : "text-yellow-700 dark:text-yellow-300",
+                        )}
+                      >
+                        {recommendationText.replace("⚠️ ", "").trim()}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+          );
+        }
+
+        return null;
+      })}
+    </div>
+  );
+};
+
 // --- Specialized Document Templates ---
 
 const DocumentHeader = ({
@@ -715,7 +1003,7 @@ export const Claims = ({
         if (claimsResult.status === "fulfilled") {
           setClaims(claimsResult.value);
         } else {
-          console.error("Failed to load claims:", claimsResult.reason);
+          // Failed to load claims
           setError(
             claimsResult.reason?.response?.data?.detail ||
               "Failed to load claims. Is the backend running?",
@@ -725,8 +1013,7 @@ export const Claims = ({
         if (policiesResult.status === "fulfilled") {
           setPolicies(policiesResult.value);
         } else {
-          console.error("Failed to load policies:", policiesResult.reason);
-          // Non-critical: claims still work without policy titles
+          // Failed to load policies - non-critical
         }
       } finally {
         setIsLoading(false);
@@ -739,18 +1026,18 @@ export const Claims = ({
   // Auto-refresh claims when there are claims with PENDING or ANALYZING fraud status
   useEffect(() => {
     const hasAnalyzingClaims = claims.some(
-      (c) => c.fraudStatus === 'PENDING' || c.fraudStatus === 'ANALYZING'
+      (c) => c.fraudStatus === "PENDING" || c.fraudStatus === "ANALYZING",
     );
 
     if (!hasAnalyzingClaims) return;
 
-    console.log('[AUTO-REFRESH] Claims in progress detected, polling every 5 seconds...');
+    // Claims in progress detected, polling every 5 seconds
 
     const refreshInterval = setInterval(async () => {
       try {
         const updatedClaims = await fetchClaims();
         setClaims(updatedClaims);
-        
+
         // Update selected claim if it exists
         if (selectedClaim) {
           const updated = updatedClaims.find((c) => c.id === selectedClaim.id);
@@ -761,19 +1048,19 @@ export const Claims = ({
 
         // Check if any claims are still analyzing
         const stillAnalyzing = updatedClaims.some(
-          (c) => c.fraudStatus === 'PENDING' || c.fraudStatus === 'ANALYZING'
+          (c) => c.fraudStatus === "PENDING" || c.fraudStatus === "ANALYZING",
         );
 
         if (!stillAnalyzing) {
-          console.log('[AUTO-REFRESH] All claims completed analysis, stopping polling.');
+          // All claims completed analysis, stopping polling
         }
       } catch (err) {
-        console.error('Failed to refresh claims:', err);
+        // Failed to refresh claims during polling
       }
     }, 5000); // Poll every 5 seconds
 
     return () => {
-      console.log('[AUTO-REFRESH] Cleanup: stopping polling interval');
+      // Cleanup: stopping polling interval
       clearInterval(refreshInterval);
     };
   }, [claims, selectedClaim]);
@@ -794,7 +1081,7 @@ export const Claims = ({
       if (onAddNotification)
         onAddNotification(`Claim ${selectedClaim.id} updated to ${status} `);
     } catch (err: any) {
-      console.error("Failed to update claim status:", err);
+      // Failed to update claim status
       if (onAddNotification)
         onAddNotification(
           `Failed to update claim: ${err.response?.data?.detail || "Unknown error"} `,
@@ -825,7 +1112,7 @@ export const Claims = ({
       if (onAddNotification)
         onAddNotification(`AI Scan Complete for ${selectedClaim.id}`);
     } catch (err: any) {
-      console.error("AI scan failed:", err);
+      // AI scan failed
       if (onAddNotification)
         onAddNotification(
           `AI Scan failed: ${err.response?.data?.detail || "Unknown error"} `,
@@ -939,12 +1226,12 @@ export const Claims = ({
                       const updatedClaims = await fetchClaims();
                       setClaims(updatedClaims);
                       if (onAddNotification) {
-                        onAddNotification('Claims refreshed successfully');
+                        onAddNotification("Claims refreshed successfully");
                       }
                     } catch (err) {
-                      console.error('Failed to refresh claims:', err);
+                      // Failed to refresh claims
                       if (onAddNotification) {
-                        onAddNotification('Failed to refresh claims');
+                        onAddNotification("Failed to refresh claims");
                       }
                     }
                   }}
@@ -954,7 +1241,7 @@ export const Claims = ({
                   <RefreshCw size={16} />
                   <span className="text-sm font-medium">Refresh</span>
                 </button>
-                
+
                 {/* Risk Threshold Slider */}
                 <div className="bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 rounded-2xl p-3 px-6 shadow-sm flex items-center gap-6 min-w-[300px]">
                   <div className="flex flex-col">
@@ -994,11 +1281,18 @@ export const Claims = ({
             </div>
 
             {/* Auto-Refresh Status Indicator */}
-            {claims.some((c) => c.fraudStatus === 'PENDING' || c.fraudStatus === 'ANALYZING') && (
+            {claims.some(
+              (c) =>
+                c.fraudStatus === "PENDING" || c.fraudStatus === "ANALYZING",
+            ) && (
               <div className="mb-4 flex items-center gap-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800 rounded-xl px-4 py-3 text-sm">
-                <RefreshCw className="animate-spin text-blue-600 dark:text-blue-400" size={16} />
+                <RefreshCw
+                  className="animate-spin text-blue-600 dark:text-blue-400"
+                  size={16}
+                />
                 <span className="text-blue-700 dark:text-blue-300 font-medium">
-                  Auto-refreshing claims with analysis in progress (every 5 seconds)
+                  Auto-refreshing claims with analysis in progress (every 5
+                  seconds)
                 </span>
               </div>
             )}
@@ -1306,13 +1600,14 @@ export const Claims = ({
                         <div className="absolute inset-0 bg-orange-500/10 blur-3xl rounded-full -z-10 transition-all duration-1000 group-hover:bg-orange-500/20" />
                       </div>
                       <div className="w-full bg-gray-50 dark:bg-white/5 rounded-2xl p-6 border border-gray-100 dark:border-white/10 shadow-sm">
-                        <p className="text-[10px] text-gray-400 uppercase font-black tracking-widest mb-3">
+                        <p className="text-[10px] text-gray-400 uppercase font-black tracking-widest mb-4">
                           AI Reasoning
                         </p>
-                        <p className="text-xs text-gray-500 leading-relaxed italic">
-                          {selectedClaim.aiAnalysis?.reasoning ||
-                            "Standard claim profile. Perform AI Deep Scan for detailed pattern recognition."}
-                        </p>
+                        <div className="text-xs text-gray-700 dark:text-gray-300 leading-relaxed">
+                          {formatAiReasoning(
+                            selectedClaim.aiAnalysis?.reasoning,
+                          )}
+                        </div>
                       </div>
                     </div>
                   </section>
@@ -1348,62 +1643,80 @@ export const Claims = ({
                       )}
                     </div>
                   </section>
-                  
+
                   {/* Detailed Rules Analysis Section */}
-                  {selectedClaim.aiAnalysis?.rulesChecked && selectedClaim.aiAnalysis.rulesChecked.length > 0 && (
-                    <section>
-                      <h3 className="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-4">
-                        🔍 Fraud Detection Rules Evaluated
-                      </h3>
-                      <div className="space-y-2">
-                        {selectedClaim.aiAnalysis.rulesChecked.map((rule, idx) => {
-                          const isPassed = rule.result.includes('PASS') || rule.result.includes('N/A');
-                          const isWarning = rule.result.includes('CAUTION') || rule.result.includes('WARNING');
-                          const isAlert = rule.result.includes('ALERT') || rule.result.includes('SUSPICIOUS') || rule.result.includes('ANOMALY');
-                          
-                          return (
-                            <div
-                              key={idx}
-                              className={`p-3 rounded-lg border text-xs ${
-                                isPassed
-                                  ? 'border-emerald-200 bg-emerald-50/50 dark:bg-emerald-500/5 dark:border-emerald-900/30'
-                                  : isWarning
-                                  ? 'border-yellow-200 bg-yellow-50/50 dark:bg-yellow-500/5 dark:border-yellow-900/30'
-                                  : 'border-rose-200 bg-rose-50/50 dark:bg-rose-500/5 dark:border-rose-900/30'
-                              }`}
-                            >
-                              <div className="flex items-start justify-between mb-1">
-                                <span className="font-semibold text-gray-700 dark:text-gray-300">
-                                  {rule.rule}
-                                </span>
-                                <span
-                                  className={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                  {selectedClaim.aiAnalysis?.rulesChecked &&
+                    selectedClaim.aiAnalysis.rulesChecked.length > 0 && (
+                      <section>
+                        <h3 className="text-[10px] font-black uppercase text-gray-400 tracking-[0.2em] mb-4">
+                          🔍 Fraud Detection Rules Evaluated
+                        </h3>
+                        <div className="space-y-2">
+                          {selectedClaim.aiAnalysis.rulesChecked.map(
+                            (rule, idx) => {
+                              const isPassed =
+                                rule.result.includes("PASS") ||
+                                rule.result.includes("N/A");
+                              const isWarning =
+                                rule.result.includes("CAUTION") ||
+                                rule.result.includes("WARNING");
+                              const isAlert =
+                                rule.result.includes("ALERT") ||
+                                rule.result.includes("SUSPICIOUS") ||
+                                rule.result.includes("ANOMALY");
+
+                              return (
+                                <div
+                                  key={idx}
+                                  className={`p-3 rounded-lg border text-xs ${
                                     isPassed
-                                      ? 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400'
+                                      ? "border-emerald-200 bg-emerald-50/50 dark:bg-emerald-500/5 dark:border-emerald-900/30"
                                       : isWarning
-                                      ? 'bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400'
-                                      : 'bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400'
+                                        ? "border-yellow-200 bg-yellow-50/50 dark:bg-yellow-500/5 dark:border-yellow-900/30"
+                                        : "border-rose-200 bg-rose-50/50 dark:bg-rose-500/5 dark:border-rose-900/30"
                                   }`}
                                 >
-                                  {rule.impact}
-                                </span>
-                              </div>
-                              <div className="text-gray-600 dark:text-gray-400 text-[11px] flex items-center gap-1">
-                                <span className="font-medium">{rule.result}</span>
-                                <span className="text-gray-400">•</span>
-                                <span>{rule.detail}</span>
-                              </div>
-                            </div>
-                          );
-                        })}
-                      </div>
-                      <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-500/5 border border-blue-200 dark:border-blue-900/30 rounded-lg">
-                        <p className="text-[11px] text-blue-700 dark:text-blue-400">
-                          ℹ️ <strong>{selectedClaim.aiAnalysis.rulesChecked.length} fraud detection rules</strong> were evaluated to calculate the final risk score of <strong>{selectedClaim.riskScore}%</strong>
-                        </p>
-                      </div>
-                    </section>
-                  )}
+                                  <div className="flex items-start justify-between mb-1">
+                                    <span className="font-semibold text-gray-700 dark:text-gray-300">
+                                      {rule.rule}
+                                    </span>
+                                    <span
+                                      className={`text-[10px] font-bold px-2 py-0.5 rounded ${
+                                        isPassed
+                                          ? "bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400"
+                                          : isWarning
+                                            ? "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-400"
+                                            : "bg-rose-100 text-rose-700 dark:bg-rose-900/30 dark:text-rose-400"
+                                      }`}
+                                    >
+                                      {rule.impact}
+                                    </span>
+                                  </div>
+                                  <div className="text-gray-600 dark:text-gray-400 text-[11px] flex items-center gap-1">
+                                    <span className="font-medium">
+                                      {rule.result}
+                                    </span>
+                                    <span className="text-gray-400">•</span>
+                                    <span>{rule.detail}</span>
+                                  </div>
+                                </div>
+                              );
+                            },
+                          )}
+                        </div>
+                        <div className="mt-4 p-3 bg-blue-50 dark:bg-blue-500/5 border border-blue-200 dark:border-blue-900/30 rounded-lg">
+                          <p className="text-[11px] text-blue-700 dark:text-blue-400">
+                            ℹ️{" "}
+                            <strong>
+                              {selectedClaim.aiAnalysis.rulesChecked.length}{" "}
+                              fraud detection rules
+                            </strong>{" "}
+                            were evaluated to calculate the final risk score of{" "}
+                            <strong>{selectedClaim.riskScore}%</strong>
+                          </p>
+                        </div>
+                      </section>
+                    )}
                 </div>
 
                 {/* Uniform Action Panel */}

@@ -426,6 +426,29 @@ async def create_claim(
             detail="You are not authorized to create a claim for this policy"
         )
     
+    # ============================================================================
+    # CRITICAL VALIDATION: Check if claim type matches policy category
+    # ============================================================================
+    policy_category = policy.category.value if hasattr(policy.category, 'value') else str(policy.category)
+    claim_type = claim_data.type.strip()
+    
+    # Normalize for case-insensitive comparison
+    if claim_type.lower() != policy_category.lower():
+        logger.warning(
+            f"[CLAIM-VALIDATION] Type mismatch detected! "
+            f"Claim type: {claim_type}, Policy category: {policy_category}, "
+            f"Policy: {claim_data.policy_number}, User: {current_user.email}"
+        )
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail=(
+                f"Invalid claim type. You are attempting to file a '{claim_type}' claim "
+                f"on a '{policy_category}' insurance policy. "
+                f"Please select a {policy_category} policy for this claim type, "
+                f"or file a {policy_category} claim for this policy."
+            )
+        )
+    
     # Check for existing active claims on this policy
     # Active claims are those not in final states (Paid or Rejected)
     existing_claim_result = await db.execute(
